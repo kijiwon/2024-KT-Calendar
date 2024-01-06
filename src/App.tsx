@@ -7,8 +7,11 @@ import { useState } from 'react';
 const AppWrapper = styled.div`
   min-width: ${SIZE.mobileMin};
   width: 100vw;
-  height: 100vh;
-  padding: 30px 20px 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px 20px;
   background-color: ${({ theme }) => theme.color.background};
 `;
 
