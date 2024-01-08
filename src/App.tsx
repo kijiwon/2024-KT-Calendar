@@ -16,9 +16,9 @@ const AppWrapper = styled.div`
 
   h1 {
     color: ${({ theme }) => theme.color.fontColor};
-    font-size: 45px;
+    font-size: 50px;
     font-weight: bold;
-    margin-top: -20px;
+    margin-top: -40px;
   }
 `;
 
@@ -49,7 +49,7 @@ const ModeButton = styled.button`
   align-items: center;
 
   font-size: 14px;
-  font-family: 'omyu_pretty';
+  font-family: 'KOTRAHOPE';
   text-align: center;
   margin-left: 10px;
   border: none;

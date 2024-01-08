@@ -1,13 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import styled from 'styled-components';
-import {
-  Calendar,
-  momentLocalizer,
-  NavigateAction,
-  DateLocalizer,
-  Event,
-} from 'react-big-calendar';
+import { Calendar, momentLocalizer, NavigateAction } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
@@ -22,9 +16,9 @@ interface ToolBarProps {
 const CalendarWrapper = styled.div`
   width: 80%;
   height: 100vh;
-  background-color: #ffff;
+  background-color: ${({ theme }) => theme.color.calendar};
   border-radius: 15px;
-  padding: 20px 15px 15px;
+  padding: 10px 15px 15px;
   margin-top: 20px;
 
   .rbc-date-cell {
@@ -36,6 +30,9 @@ const CalendarWrapper = styled.div`
   .rbc-event {
     padding: 0;
   }
+  .rbc-today {
+    background-color: ${({ theme }) => theme.color.calendar};
+  }
 `;
 
 const CellWrapper = styled.div`
@@ -44,9 +41,8 @@ const CellWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 18px;
+  font-family: 'KOTRAHOPE';
 
   p {
     width: 18px;
@@ -59,6 +55,42 @@ const CellWrapper = styled.div`
   }
 `;
 
+const ToolBarWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  p {
+    margin-left: 20px;
+    font-family: 'KOTRAHOPE';
+    font-size: 18px;
+    &:last-child {
+      font-size: 40px;
+      margin-top: 3px;
+    }
+  }
+`;
+
+const ToolBarButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 50px;
+`;
+
+const ToolBarButton = styled.button`
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-family: 'KOTRAHOPE';
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+`;
+
 const ToolBar = ({ label, onNavigate }: ToolBarProps) => {
   const handleNavigate = (action: NavigateAction) => {
     onNavigate(action);
@@ -68,21 +100,23 @@ const ToolBar = ({ label, onNavigate }: ToolBarProps) => {
   const formatMonth = moment(label, 'MMMM YYYY').format('MM월');
 
   return (
-    <div>
+    <ToolBarWrapper>
       <div>
         <p>{formatYear}</p>
         <p>{formatMonth}</p>
       </div>
-      <div>
-        <button onClick={() => handleNavigate('PREV')}>
-          <IoIosArrowBack />
-        </button>
-        <button onClick={() => handleNavigate('TODAY')}>이번달</button>
-        <button onClick={() => handleNavigate('NEXT')}>
-          <IoIosArrowForward />
-        </button>
-      </div>
-    </div>
+      <ToolBarButtonWrapper>
+        <ToolBarButton onClick={() => handleNavigate('PREV')}>
+          <IoIosArrowBack size={20} />
+        </ToolBarButton>
+        <ToolBarButton onClick={() => handleNavigate('TODAY')}>
+          <span>이번달</span>
+        </ToolBarButton>
+        <ToolBarButton onClick={() => handleNavigate('NEXT')}>
+          <IoIosArrowForward size={20} />
+        </ToolBarButton>
+      </ToolBarButtonWrapper>
+    </ToolBarWrapper>
   );
 };
 

@@ -14,8 +14,9 @@ export const COLOR = {
 
 export const DdoryTheme = {
   color: {
-    background: `${COLOR.light_gray}`,
+    background: `#fff`,
     fontColor: `${COLOR.black}`,
+    calendar: `${COLOR.light_gray}`,
   },
 };
 
@@ -23,5 +24,6 @@ export const VicTheme = {
   color: {
     background: `${COLOR.black}`,
     fontColor: '#ffff',
+    calendar: `#ffff`,
   },
 };
