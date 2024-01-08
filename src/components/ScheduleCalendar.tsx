@@ -76,12 +76,15 @@ const CellWrapper = styled.div`
     justify-content: center;
     p {
       font-size: 16px;
-      margin-left: 0px;
+      width: 16px;
+      height: 16px;
     }
     img {
-      width: 95%;
-      height: 57px;
+      width: 80%;
+      height: 55px;
+      padding-top: 0px;
       padding-bottom: 4px;
+      margin: 0px 10px;
     }
   }
 `;

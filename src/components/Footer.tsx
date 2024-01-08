@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { SIZE } from '../style/theme';
 
 const FooterWrapper = styled.footer`
   position: relative;
@@ -16,6 +17,10 @@ const FooterWrapper = styled.footer`
     color: ${({ theme }) => theme.color.logo};
     font-family: 'KOTRAHOPE';
   }
+  @media screen and (max-width: ${SIZE.tablet}) {
+    height: 10%;
+    flex-direction: column;
+  }
 `;
 const LogoWrapper = styled.div`
   width: 40%;
@@ -23,12 +28,27 @@ const LogoWrapper = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-
   img {
     width: 80px;
   }
+  img:last-child {
+    width: 120px;
+  }
   p {
     font-size: 55px;
+  }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    width: 100%;
+    img {
+      width: 40px;
+    }
+    img:last-child {
+      width: 80px;
+    }
+    p {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -49,6 +69,15 @@ const LinkButton = styled.button`
     }
   }
   cursor: pointer;
+  @media screen and (max-width: ${SIZE.tablet}) {
+    position: inherit;
+    height: 20px;
+    right: 0px;
+    margin-top: 5px;
+    p {
+      font-size: 14px;
+    }
+  }
 `;
 
 const ProjectFooter = () => {
