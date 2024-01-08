@@ -41,7 +41,7 @@ const CalendarWrapper = styled.div`
   }
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 95%;
-    height: 600px;
+    height: 630px;
   }
 `;
 
@@ -64,8 +64,8 @@ const CellWrapper = styled.div`
   }
   img {
     max-width: 50%;
-    min-height: 2rem;
-    height: 7rem;
+    min-height: 2em;
+    height: 7em;
     padding-top: 20px;
     padding-bottom: 40px;
     margin-right: auto;
@@ -80,10 +80,10 @@ const CellWrapper = styled.div`
       height: 16px;
     }
     img {
-      width: 80%;
-      height: 55px;
-      padding-top: 0px;
-      padding-bottom: 4px;
+      width: 60%;
+      height: 5em;
+      padding-top: 10px;
+      padding-bottom: 40px;
       margin: 0px 10px;
     }
   }

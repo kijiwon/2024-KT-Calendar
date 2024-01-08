@@ -23,7 +23,7 @@ const AppWrapper = styled.div`
 
   @media screen and (max-width: ${SIZE.tablet}) {
     padding-top: 10px;
-    height: 100vh;
+    height: 100%;
     h1 {
       font-size: 30px;
       margin-top: 10px;

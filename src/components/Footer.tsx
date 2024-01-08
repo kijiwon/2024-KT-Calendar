@@ -19,7 +19,9 @@ const FooterWrapper = styled.footer`
   }
   @media screen and (max-width: ${SIZE.tablet}) {
     height: 10%;
+    bottom: 0px;
     flex-direction: column;
+    margin-top: 30px;
   }
 `;
 const LogoWrapper = styled.div`
@@ -41,13 +43,13 @@ const LogoWrapper = styled.div`
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 100%;
     img {
-      width: 40px;
+      width: 50px;
     }
     img:last-child {
-      width: 80px;
+      width: 60px;
     }
     p {
-      font-size: 20px;
+      font-size: 25px;
     }
   }
 `;
