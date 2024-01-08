@@ -14,7 +14,7 @@ export const COLOR = {
 
 export const DdoryTheme = {
   color: {
-    background: '#ffff',
+    background: `${COLOR.light_gray}`,
     fontColor: `${COLOR.black}`,
   },
 };

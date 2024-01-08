@@ -22,14 +22,18 @@ interface ToolBarProps {
 const CalendarWrapper = styled.div`
   width: 80%;
   height: 100vh;
-  background-color: ${COLOR.light_gray};
+  background-color: #ffff;
   border-radius: 15px;
   padding: 20px 15px 15px;
+  margin-top: 20px;
 
   .rbc-date-cell {
     text-align: start;
     margin-top: 2px;
     margin-left: 3px;
+    padding: 0;
+  }
+  .rbc-event {
     padding: 0;
   }
 `;
@@ -51,8 +55,7 @@ const CellWrapper = styled.div`
     border-radius: 25px;
   }
   img {
-    height: 84px;
-    margin-top: -1px;
+    width: 85%;
   }
 `;
 

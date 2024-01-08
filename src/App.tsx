@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import ScheduleCalendar from './components/ScheduleCalendar';
-import { DdoryTheme, SIZE, VicTheme } from './style/theme';
+import { COLOR, DdoryTheme, SIZE, VicTheme } from './style/theme';
 import { useState } from 'react';
 
 const AppWrapper = styled.div`
@@ -11,17 +11,61 @@ const AppWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px 20px 20px;
+  padding: 15px 25px 20px;
   background-color: ${({ theme }) => theme.color.background};
+
+  h1 {
+    color: ${({ theme }) => theme.color.fontColor};
+    font-size: 45px;
+    font-weight: bold;
+    margin-top: -20px;
+  }
 `;
 
 const AppHeader = styled.header`
-  p {
-    color: ${({ theme }) => theme.color.fontColor};
-  }
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
   img {
-    width: 100px;
+    width: 80px;
+    height: fit-content;
+  }
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+const ModeButton = styled.button`
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 14px;
+  font-family: 'omyu_pretty';
+  text-align: center;
+  margin-left: 10px;
+  border: none;
+
+  background-color: inherit;
+
+  cursor: pointer;
+  p {
+    margin-top: 3px;
+    color: ${({ theme }) => theme.color.fontColor};
+    border-bottom: 2px solid ${COLOR.dark_red};
+  }
+  img {
+    width: 65px;
+    background-color: ${COLOR.dark_red};
+    border-radius: 50%;
   }
 `;
 
@@ -37,9 +81,18 @@ function App() {
           ) : (
             <img src={process.env.PUBLIC_URL + '/assets/ktmark-black.png'} />
           )}
-          <p>2024 kt wiz 경기일정</p>
-          <button onClick={() => setVicMode(!vicMode)}>모드변경</button>
+          <ButtonWrapper>
+            <ModeButton onClick={() => setVicMode(true)}>
+              <img src={process.env.PUBLIC_URL + '/assets/vic.png'} />
+              <p>빅 모드</p>
+            </ModeButton>
+            <ModeButton onClick={() => setVicMode(false)}>
+              <img src={process.env.PUBLIC_URL + '/assets/ddory.png'} />
+              <p>또리 모드</p>
+            </ModeButton>
+          </ButtonWrapper>
         </AppHeader>
+        <h1>2024 kt wiz 경기일정</h1>
         <ScheduleCalendar />
       </AppWrapper>
     </ThemeProvider>
