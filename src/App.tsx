@@ -20,6 +20,15 @@ const AppWrapper = styled.div`
     font-weight: bold;
     margin-top: -40px;
   }
+
+  @media screen and (max-width: ${SIZE.tablet}) {
+    padding: 10px 0px;
+    height: 100vh;
+    h1 {
+      font-size: 30px;
+      margin-top: 10px;
+    }
+  }
 `;
 
 const AppHeader = styled.header`
@@ -32,6 +41,9 @@ const AppHeader = styled.header`
   img {
     width: 80px;
     height: fit-content;
+  }
+  @media screen and (max-width: ${SIZE.tablet}) {
+    width: 80%;
   }
 `;
 
@@ -53,10 +65,7 @@ const ModeButton = styled.button`
   text-align: center;
   margin-left: 10px;
   border: none;
-
   background-color: inherit;
-
-  cursor: pointer;
   p {
     margin-top: 3px;
     color: ${({ theme }) => theme.color.fontColor};
@@ -67,6 +76,12 @@ const ModeButton = styled.button`
     background-color: ${COLOR.dark_red};
     border-radius: 50%;
   }
+  @media screen and (max-width: ${SIZE.tablet}) {
+    img {
+      width: 30px;
+    }
+  }
+  cursor: pointer;
 `;
 
 function App() {
