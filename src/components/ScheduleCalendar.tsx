@@ -63,13 +63,13 @@ const CellWrapper = styled.div`
     margin-left: 3px;
   }
   img {
-    max-width: 60%;
+    max-width: 50%;
     min-height: 2rem;
     height: 7rem;
-    padding-top: 5px;
-    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 40px;
     margin-right: auto;
-    margin-left: 10px;
+    margin-left: 30px;
   }
   @media screen and (max-width: ${SIZE.tablet}) {
     flex-direction: column;
