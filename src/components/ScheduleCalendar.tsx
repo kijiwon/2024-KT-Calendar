@@ -14,7 +14,7 @@ interface ToolBarProps {
 }
 
 const CalendarWrapper = styled.div`
-  width: 90%;
+  width: 80%;
   height: 100vh;
   background-color: ${({ theme }) => theme.color.calendar};
   border-radius: 15px;
@@ -30,6 +30,12 @@ const CalendarWrapper = styled.div`
   .rbc-event {
     padding: 0;
   }
+  .rbc-selected {
+    &:focus,
+    &:active {
+      outline: none;
+    }
+  }
   .rbc-today {
     background-color: ${({ theme }) => theme.color.calendar};
   }
@@ -44,6 +50,7 @@ const CellWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: start;
   font-size: 18px;
   font-family: 'KOTRAHOPE';
@@ -53,21 +60,28 @@ const CellWrapper = styled.div`
     height: 18px;
     text-align: center;
     border-radius: 25px;
-    margin-right: 3px;
+    margin-left: 3px;
   }
   img {
-    width: 75%;
+    max-width: 60%;
+    min-height: 2rem;
+    height: 7rem;
+    padding-top: 5px;
+    padding-bottom: 30px;
+    margin-right: auto;
+    margin-left: 10px;
   }
   @media screen and (max-width: ${SIZE.tablet}) {
     flex-direction: column;
     justify-content: center;
     p {
       font-size: 16px;
+      margin-left: 0px;
     }
     img {
       width: 95%;
-      padding-bottom: 4px;
       height: 57px;
+      padding-bottom: 4px;
     }
   }
 `;

@@ -46,6 +46,7 @@ const AppHeader = styled.header`
     width: 90%;
     img {
       width: 70px;
+      height: 30px;
     }
   }
 `;
