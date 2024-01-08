@@ -5,7 +5,7 @@ import { Calendar, momentLocalizer, NavigateAction } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import { COLOR } from '../style/theme';
+import { COLOR, SIZE } from '../style/theme';
 import { gameData } from '../data/gameData';
 
 interface ToolBarProps {
@@ -14,7 +14,7 @@ interface ToolBarProps {
 }
 
 const CalendarWrapper = styled.div`
-  width: 80%;
+  width: 90%;
   height: 100vh;
   background-color: ${({ theme }) => theme.color.calendar};
   border-radius: 15px;
@@ -24,7 +24,7 @@ const CalendarWrapper = styled.div`
   .rbc-date-cell {
     text-align: start;
     margin-top: 2px;
-    margin-left: 3px;
+    margin-left: 5px;
     padding: 0;
   }
   .rbc-event {
@@ -33,6 +33,10 @@ const CalendarWrapper = styled.div`
   .rbc-today {
     background-color: ${({ theme }) => theme.color.calendar};
   }
+  @media screen and (max-width: ${SIZE.tablet}) {
+    width: 95%;
+    height: 600px;
+  }
 `;
 
 const CellWrapper = styled.div`
@@ -40,7 +44,7 @@ const CellWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  align-items: start;
   font-size: 18px;
   font-family: 'KOTRAHOPE';
 
@@ -49,9 +53,22 @@ const CellWrapper = styled.div`
     height: 18px;
     text-align: center;
     border-radius: 25px;
+    margin-right: 3px;
   }
   img {
-    width: 85%;
+    width: 75%;
+  }
+  @media screen and (max-width: ${SIZE.tablet}) {
+    flex-direction: column;
+    justify-content: center;
+    p {
+      font-size: 16px;
+    }
+    img {
+      width: 95%;
+      padding-bottom: 4px;
+      height: 57px;
+    }
   }
 `;
 
@@ -70,6 +87,12 @@ const ToolBarWrapper = styled.div`
     &:last-child {
       font-size: 40px;
       margin-top: 3px;
+    }
+  }
+  @media screen and (max-width: ${SIZE.tablet}) {
+    margin-bottom: 5px;
+    p:last-child {
+      font-size: 30px;
     }
   }
 `;
@@ -126,10 +149,6 @@ const ScheduleCalendar = () => {
   const eventData = gameData.map((event) => ({
     title: (
       <CellWrapper>
-        <img
-          alt="teamlogo"
-          src={process.env.PUBLIC_URL + `/assets/teamlogo/${event.team}.png`}
-        />
         <p
           style={{
             color: event.place === 'H' ? `#ffff` : `${COLOR.black}`,
@@ -138,6 +157,10 @@ const ScheduleCalendar = () => {
         >
           {event.place}
         </p>
+        <img
+          alt="teamlogo"
+          src={process.env.PUBLIC_URL + `/assets/teamlogo/${event.team}.png`}
+        />
       </CellWrapper>
     ),
     start: new Date(event.date),
