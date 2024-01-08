@@ -43,7 +43,10 @@ const AppHeader = styled.header`
     height: fit-content;
   }
   @media screen and (max-width: ${SIZE.tablet}) {
-    width: 80%;
+    width: 90%;
+    img {
+      width: 70px;
+    }
   }
 `;
 
@@ -77,6 +80,8 @@ const ModeButton = styled.button`
     border-radius: 50%;
   }
   @media screen and (max-width: ${SIZE.tablet}) {
+    font-size: 12px;
+    margin-left: 2px;
     img {
       width: 30px;
     }
