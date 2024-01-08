@@ -17,6 +17,9 @@ export const DdoryTheme = {
     background: `#fff`,
     fontColor: `${COLOR.black}`,
     calendar: `${COLOR.light_gray}`,
+    footer: `${COLOR.black}`,
+    logo: `#fff`,
+    buttonText: `${COLOR.black}`,
   },
 };
 
@@ -25,5 +28,8 @@ export const VicTheme = {
     background: `${COLOR.black}`,
     fontColor: '#ffff',
     calendar: `#ffff`,
+    footer: `${COLOR.crimson}`,
+    logo: `${COLOR.black}`,
+    buttonText: `${COLOR.crimson}`,
   },
 };
