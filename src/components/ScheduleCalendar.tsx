@@ -14,7 +14,7 @@ interface ToolBarProps {
 }
 
 const CalendarWrapper = styled.div`
-  width: 90%;
+  width: 80%;
   height: 100vh;
   background-color: ${({ theme }) => theme.color.calendar};
   border-radius: 15px;
@@ -30,12 +30,18 @@ const CalendarWrapper = styled.div`
   .rbc-event {
     padding: 0;
   }
+  .rbc-selected {
+    &:focus,
+    &:active {
+      outline: none;
+    }
+  }
   .rbc-today {
     background-color: ${({ theme }) => theme.color.calendar};
   }
   @media screen and (max-width: ${SIZE.tablet}) {
     width: 95%;
-    height: 600px;
+    height: 630px;
   }
 `;
 
@@ -44,6 +50,7 @@ const CellWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: start;
   font-size: 18px;
   font-family: 'KOTRAHOPE';
@@ -53,21 +60,31 @@ const CellWrapper = styled.div`
     height: 18px;
     text-align: center;
     border-radius: 25px;
-    margin-right: 3px;
+    margin-left: 3px;
   }
   img {
-    width: 75%;
+    max-width: 50%;
+    min-height: 2em;
+    height: 7em;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    margin-right: auto;
+    margin-left: 30px;
   }
   @media screen and (max-width: ${SIZE.tablet}) {
     flex-direction: column;
     justify-content: center;
     p {
       font-size: 16px;
+      width: 16px;
+      height: 16px;
     }
     img {
-      width: 95%;
-      padding-bottom: 4px;
-      height: 57px;
+      width: 60%;
+      height: 5em;
+      padding-top: 10px;
+      padding-bottom: 40px;
+      margin: 0px 10px;
     }
   }
 `;
