@@ -90,7 +90,7 @@ const ProjectFooter = () => {
   return (
     <FooterWrapper>
       <LogoWrapper>
-        <img src={process.env.PUBLIC_URL + '/assets/teamlogo/kt.png'} />
+        <img src={process.env.PUBLIC_URL + '/assets/ktlogo.png'} />
         <p>Road To V2</p>
         <img src={process.env.PUBLIC_URL + '/assets/vicddory3.png'} />
       </LogoWrapper>
