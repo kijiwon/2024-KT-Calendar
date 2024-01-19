@@ -63,11 +63,10 @@ const CellWrapper = styled.div`
     margin-left: 3px;
   }
   img {
-    max-width: 50%;
-    min-height: 2em;
-    height: 7em;
-    padding-top: 20px;
-    padding-bottom: 40px;
+    max-width: 35%;
+    height: 6.5rem;
+    padding-top: -10px;
+    padding-bottom: 30px;
     margin-right: auto;
     margin-left: 30px;
   }
