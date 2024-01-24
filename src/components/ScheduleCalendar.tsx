@@ -29,6 +29,7 @@ const CalendarWrapper = styled.div`
   }
   .rbc-event {
     padding: 0;
+    border-radius: 0;
   }
   .rbc-selected {
     &:focus,
@@ -56,20 +57,13 @@ const CellWrapper = styled.div`
   font-family: 'KOTRAHOPE';
 
   p {
-    width: 18px;
+    width: 22px;
     height: 18px;
     text-align: center;
     border-radius: 25px;
     margin-left: 3px;
   }
-  img {
-    max-width: 35%;
-    height: 6.5rem;
-    padding-top: -10px;
-    padding-bottom: 30px;
-    margin-right: auto;
-    margin-left: 30px;
-  }
+
   @media screen and (max-width: ${SIZE.tablet}) {
     flex-direction: column;
     justify-content: center;
@@ -78,12 +72,30 @@ const CellWrapper = styled.div`
       width: 16px;
       height: 16px;
     }
+  }
+`;
+
+const ImgWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    /* max-width: 35%; */
+    height: 5rem;
+    margin-top: 20px;
+    margin-bottom: 24px;
+    margin-left: -18px;
+    padding-bottom: 30px;
+  }
+  @media screen and (max-width: ${SIZE.tablet}) {
     img {
-      width: 60%;
-      height: 5em;
-      padding-top: 10px;
-      padding-bottom: 40px;
-      margin: 0px 10px;
+      /* width: 70%; */
+      height: 3em;
+      margin-top: 10px;
+      margin-left: 0px;
+      padding-bottom: 25px;
     }
   }
 `;
@@ -173,10 +185,12 @@ const ScheduleCalendar = () => {
         >
           {event.place}
         </p>
-        <img
-          alt="teamlogo"
-          src={process.env.PUBLIC_URL + `/assets/teamlogo/${event.team}.png`}
-        />
+        <ImgWrapper>
+          <img
+            alt="teamlogo"
+            src={process.env.PUBLIC_URL + `/assets/teamlogo/${event.team}.png`}
+          />
+        </ImgWrapper>
       </CellWrapper>
     ),
     start: new Date(event.date),

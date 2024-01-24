@@ -54,38 +54,51 @@ const LogoWrapper = styled.div`
   }
 `;
 
-const LinkButton = styled.button`
+const Copyright = styled.p`
   position: absolute;
   right: 30px;
-  height: 30px;
-  background-color: inherit;
-  border: 1.5px solid ${({ theme }) => theme.color.logo};
-  border-radius: 10px;
-  p {
-    font-size: 18px;
-  }
-  &:hover {
-    background-color: ${({ theme }) => theme.color.logo};
-    p {
-      color: ${({ theme }) => theme.color.buttonText};
-    }
-  }
-  cursor: pointer;
+  font-size: 20px;
+  letter-spacing: 3px;
   @media screen and (max-width: ${SIZE.tablet}) {
     position: inherit;
-    height: 20px;
-    right: 0px;
-    margin-top: 5px;
-    p {
-      font-size: 14px;
-    }
+    right: 0;
+    font-size: 22px;
+    margin-bottom: 10px;
   }
 `;
 
+// const LinkButton = styled.button`
+//   position: absolute;
+//   right: 30px;
+//   height: 30px;
+//   background-color: inherit;
+//   border: 1.5px solid ${({ theme }) => theme.color.logo};
+//   border-radius: 10px;
+//   p {
+//     font-size: 18px;
+//   }
+//   &:hover {
+//     background-color: ${({ theme }) => theme.color.logo};
+//     p {
+//       color: ${({ theme }) => theme.color.buttonText};
+//     }
+//   }
+//   cursor: pointer;
+//   @media screen and (max-width: ${SIZE.tablet}) {
+//     position: inherit;
+//     height: 20px;
+//     right: 0px;
+//     margin-top: 5px;
+//     p {
+//       font-size: 14px;
+//     }
+//   }
+// `;
+
 const ProjectFooter = () => {
-  const openGithub = () => {
-    window.open('https://github.com/kijiwon/2024-KT-Calendar');
-  };
+  // const openGithub = () => {
+  //   window.open('https://github.com/kijiwon/2024-KT-Calendar');
+  // };
 
   return (
     <FooterWrapper>
@@ -94,9 +107,10 @@ const ProjectFooter = () => {
         <p>Road To V2</p>
         <img src={process.env.PUBLIC_URL + '/assets/vicddory3.png'} />
       </LogoWrapper>
-      <LinkButton onClick={openGithub}>
+      {/* <LinkButton onClick={openGithub}>
         <p>Github 보러가기 Click⇦</p>
-      </LinkButton>
+      </LinkButton> */}
+      <Copyright>&copy; ZZIONIE</Copyright>
     </FooterWrapper>
   );
 };
