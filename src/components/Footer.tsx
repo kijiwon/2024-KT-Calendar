@@ -54,19 +54,6 @@ const LogoWrapper = styled.div`
   }
 `;
 
-const Copyright = styled.p`
-  position: absolute;
-  right: 30px;
-  font-size: 20px;
-  letter-spacing: 3px;
-  @media screen and (max-width: ${SIZE.tablet}) {
-    position: inherit;
-    right: 0;
-    font-size: 22px;
-    margin-bottom: 10px;
-  }
-`;
-
 // const LinkButton = styled.button`
 //   position: absolute;
 //   right: 30px;
@@ -110,7 +97,6 @@ const ProjectFooter = () => {
       {/* <LinkButton onClick={openGithub}>
         <p>Github 보러가기 Click⇦</p>
       </LinkButton> */}
-      <Copyright>&copy; ZZIONIE</Copyright>
     </FooterWrapper>
   );
 };
