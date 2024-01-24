@@ -37,7 +37,7 @@ function App() {
     <ThemeProvider theme={vicMode ? VicTheme : DdoryTheme}>
       <AppWrapper>
         <ProjectHeader vicMode={vicMode} setVicMode={setVicMode} />
-        <h1>2024 kt wiz 경기일정</h1>
+        <h1>2024 kt wiz 경기 일정</h1>
         <ScheduleCalendar />
         <ProjectFooter />
       </AppWrapper>
