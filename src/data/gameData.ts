@@ -2,6 +2,56 @@ import { DataType } from '../types/dataType';
 
 export const gameData: DataType[] = [
   {
+    date: '2024-03-09',
+    team: 'lg',
+    place: 'H',
+  },
+  {
+    date: '2024-03-10',
+    team: 'lg',
+    place: 'H',
+  },
+  {
+    date: '2024-03-11',
+    team: 'ssg',
+    place: 'H',
+  },
+  {
+    date: '2024-03-12',
+    team: 'ssg',
+    place: 'H',
+  },
+  {
+    date: '2024-03-14',
+    team: 'hanwha',
+    place: 'A',
+  },
+  {
+    date: '2024-03-15',
+    team: 'hanwha',
+    place: 'A',
+  },
+  {
+    date: '2024-03-16',
+    team: 'kia',
+    place: 'A',
+  },
+  {
+    date: '2024-03-18',
+    team: 'lotte',
+    place: 'H',
+  },
+  {
+    date: '2024-03-19',
+    team: 'lotte',
+    place: 'H',
+  },
+  {
+    date: '2024-03-16',
+    team: 'kia',
+    place: 'A',
+  },
+  {
     date: '2024-03-23',
     team: 'samsung',
     place: 'H',
